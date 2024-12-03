@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Task Management Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **Task Management Dashboard** built using **React**, **Redux Toolkit**, and **React Router**. The application allows users to manage tasks, including features like adding, editing, deleting, marking tasks as completed, and filtering tasks based on status (completed, pending, overdue). The application is fully responsive and works on both desktop and mobile devices.
 
-## Available Scripts
+## Features
+- **Add Task**: Allows users to add tasks with a title, description, and due date.
+- **Edit Task**: Users can edit existing tasks.
+- **Delete Task**: Users can delete tasks from the task list.
+- **Mark as Completed**: Users can mark tasks as completed.
+- **Task Filters**: Filter tasks by status (All Tasks, Completed Tasks, Pending Tasks, Overdue Tasks).
+- **Responsive Design**: The app is fully responsive and adapts to mobile and desktop screens.
+- **Task Details**: View detailed information of individual tasks.
 
-In the project directory, you can run:
+## Technologies Used
+- **React** (JavaScript ES6+)
+- **Redux Toolkit** for state management
+- **React Router** for navigation
+- **CSS/SCSS** for styling (Responsive design)
+- **Material UI** or **Styled Components** for UI components (optional)
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Below is the overall folder structure of the project:
+elow is the overall folder structure of the project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+task-management-dashboard/ ├── src/ │ ├── components/ │ │ ├── TaskCard.js # Component for displaying individual tasks │ │ ├── TaskList.js # Component for displaying list of tasks │ │ ├── TaskFilters.js # Component for filtering tasks │ ├── pages/ │ │ ├── HomePage.jsx # Home page with TaskDashboard link │ │ ├── TaskDashboard.jsx # Dashboard for task management │ │ ├── TaskDetails.jsx # Detailed task view page │ ├── redux/ │ │ ├── reducers.js # Redux reducers for managing tasks and filters │ ├── App.js # Main app component with routing setup │ ├── index.js # Entry point for the React application │ ├── index.css # Global CSS for styling
 
-### `npm test`
+### Breakdown of Components:
+1. **`TaskCard.js`**:
+   - Displays a single task's details (title, description, due date, and status).
+   - Allows users to mark a task as completed or delete it.
+   
+2. **`TaskList.js`**:
+   - Renders the list of tasks, filtering them based on the selected filter (all, completed, pending, overdue).
+   - Uses the `TaskCard` component to display each task.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **`TaskFilters.js`**:
+   - Provides the UI for filtering tasks by their status (All Tasks, Completed, Pending, Overdue).
+   - Updates the Redux state with the selected filter.
 
-### `npm run build`
+4. **`HomePage.jsx`**:
+   - The landing page of the app.
+   - Contains a welcome message and a link to the Task Dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **`TaskDashboard.jsx`**:
+   - Displays the task list and the TaskFilters component.
+   - Allows users to view tasks and navigate to individual task details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. **`TaskDetails.jsx`**:
+   - Displays detailed information for a specific task.
+   - Allows users to navigate back to the Task Dashboard.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. **`reducers.js`**:
+   - Contains Redux reducers that manage the task data, including adding, deleting, editing, and filtering tasks.
 
-### `npm run eject`
+8. **`App.js`**:
+   - Configures the routes for the application using React Router.
+   - Routes:
+     - `/`: Home Page
+     - `/tasks`: Task Dashboard
+     - `/tasks/:id`: Task Details Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+9. **`index.js`**:
+   - The entry point for the React application.
+   - Sets up the **Redux provider** and **Router** for the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+10. **`index.css`**:
+    - Global styles for the application, including responsive layout.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setup & Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+Ensure that you have **Node.js** and **npm** (Node Package Manager) installed. You can download and install them from [Node.js official website](https://nodejs.org/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Steps to Run the Project Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Follow these steps to set up and run the project on your local machine:
 
-### Code Splitting
+1. **Clone the Repository**:
+   Open your terminal and clone the repository from GitHub:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   git clone 
+   cd task-management-dashboard
+   Install Dependencies: Install the required dependencies using npm:
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm install
+Start the Development Server: Once the dependencies are installed, start the development server:
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm start
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
